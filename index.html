@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación XV Años - Elizabeth López Castro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="invitation-container">
+        <div class="phrase">"Entre luces doradas y sueños cumplidos, hoy comienza mi historia…"</div>
+        
+        <div class="name">Elizabeth López Castro</div>
+        
+        <div class="body-text">
+            junto con sus padres<br>
+            Elisabeth Castro Cortés y Enrique López Uribe,<br>
+            tienen el honor de invitarte a celebrar sus XV Años.
+        </div>
+        
+        <div class="section-title">MISA</div>
+        <a href="https://share.google/g2FYUoy8qTgveFLX6" target="_blank" class="location-button">Ubicación</a>
+        <div class="details">⏰ 2:00 PM</div>
+        
+        <div class="section-title">RECEPCIÓN</div>
+        <a href="https://share.google/YzPQeeOmu0HskGJyj" target="_blank" class="location-button">Ubicación</a>
+        <div class="details">⏰ A partir de las 3:00 PM</div>
+        
+        <div class="details">18 de octubre de 2025</div>
+        
+        <div class="countdown" id="countdown">
+            <div><span id="days">00</span>Días</div>
+            <div><span id="hours">00</span>Horas</div>
+            <div><span id="minutes">00</span>Minutos</div>
+            <div><span id="seconds">00</span>Segundos</div>
+        </div>
+        
+        <div class="final-phrase">"Tu presencia será el mejor regalo en este día tan especial."</div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        const eventDate = new Date('October 18, 2025 14:00:00').getTime();
+        
+        const countdown = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById('countdown').innerHTML = '¡El evento ha comenzado!';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

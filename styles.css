@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #B19766; /* Gris dorado */
+    background: url('img_1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(253, 246, 236, 0.7); /* Beige claro semitransparente */
+    z-index: 1;
+}
+
+.invitation-container {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #C9A03B; /* Borde dorado */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.phrase {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #C9A03B; /* Dorado */
+    margin-bottom: 1rem;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+.name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #C9A03B;
+    margin: 1rem 0;
+}
+
+.body-text {
+    font-size: 1.2rem;
+    color: #B19766;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: #C9A03B;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.details {
+    font-size: 1rem;
+    color: #EAD7B7; /* Champagne */
+    margin: 0.3rem 0;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
+    color: #C9A03B;
+}
+
+.countdown div {
+    background: #EAD7B7;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    min-width: 60px;
+}
+
+.countdown span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.final-phrase {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: #C9A03B;
+    margin-top: 2rem;
+}
+
+.location-button {
+    background: #C9A03B; /* Dorado */
+    color: #FFF;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0.3rem 0;
+    display: inline-block;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.location-button:hover {
+    background: #EAD7B7; /* Champagne */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .invitation-container {
+        padding: 1rem;
+    }
+    .phrase, .name {
+        font-size: 2rem;
+    }
+    .body-text, .details {
+        font-size: 1rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .location-button {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
